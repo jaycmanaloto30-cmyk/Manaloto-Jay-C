@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jay-C Manaloto | Digital Architect</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;500;800&family=Space+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        :root {
+            --bg: #050505;
+            --glass: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --accent: #ff3e00; 
+            --accent-2: #00f2ff; 
+            --text: #ffffff;
+            --text-dim: #a1a1aa;
+        }
+
+        [data-theme="light"] {
+            --bg: #fcfcfc;
+            --glass: rgba(0, 0, 0, 0.03);
+            --glass-border: rgba(0, 0, 0, 0.08);
+            --accent: #ff3e00;
+            --accent-2: #0072ff;
+            --text: #09090b;
+            --text-dim: #71717a;
+        }
+
+        * {
+            margin: 0; padding: 0; box-sizing: border-box;
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+            line-height: 1.4;
+        }
+
+        .aura-container {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: -1;
+            filter: blur(120px);
+            opacity: 0.5;
+        }
+
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            animation: drift 20s infinite alternate;
+        }
+
+        .orb-1 { width: 400px; height: 400px; background: var(--accent); top: -10%; left: 10%; }
+        .orb-2 { width: 500px; height: 500px; background: var(--accent-2); bottom: -10%; right: 10%; animation-delay: -5s; }
+
+        @keyframes drift {
+            from { transform: translate(0, 0) scale(1); }
+            to { transform: translate(100px, 100px) scale(1.2); }
+        }
+
+        .wrapper {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 60px 24px;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            margin-bottom: 80px;
+            padding: 40px;
+        }
+
+        .profile-wrapper {
+            position: relative;
+            padding: 10px;
+        }
+
+        .profile-img {
+            width: 150px; height: 150px;
+            border-radius: 30px;
+            object-fit: cover;
+            transform: rotate(-5deg);
+            border: 1px solid var(--glass-border);
+            background: var(--glass);
+        }
+
+        .header-text h1 {
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            font-weight: 800;
+            letter-spacing: -3px;
+            line-height: 1;
+        }
+
+        .shimmer {
+            background: linear-gradient(90deg, var(--text) 0%, var(--accent) 50%, var(--text) 100%);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shine 5s linear infinite;
+        }
+
+        @keyframes shine { to { background-position: 200% center; } }
+
+        .bento {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-auto-rows: minmax(160px, auto);
+            gap: 20px;
+        }
+
+        .tile {
+            background: var(--glass);
+            backdrop-filter: blur(40px);
+            border: 1px solid var(--glass-border);
+            border-radius: 40px;
+            padding: 30px;
+            position: relative;
+        }
+
+        .tile:hover {
+            background: rgba(255, 255, 255, 0.06);
+            border-color: var(--accent);
+            transform: translateY(-5px);
+        }
+
+        .wide { grid-column: span 2; }
+        .tall { grid-row: span 2; }
+        .full { grid-column: span 4; }
+
+        h2 {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+        }
+
+        .lab-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 15px;
+        }
+
+        .lab-tile {
+            background: var(--glass-border);
+            padding: 15px 20px;
+            border-radius: 20px;
+            text-decoration: none;
+            color: var(--text);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .lab-tile:hover {
+            background: var(--text);
+            color: var(--bg);
+        }
+
+        .contact-pill {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+            color: var(--text-dim);
+            text-decoration: none;
+        }
+
+        .contact-pill i { color: var(--accent-2); }
+        .contact-pill:hover { color: var(--text); }
+
+        .toggle {
+            position: fixed;
+            bottom: 40px; right: 40px;
+            width: 60px; height: 60px;
+            border-radius: 50%;
+            background: var(--text);
+            color: var(--bg);
+            border: none;
+            cursor: pointer;
+            z-index: 1000;
+            font-size: 1.5rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        @media (max-width: 900px) {
+            header { flex-direction: column; text-align: center; }
+            .bento { grid-template-columns: 1fr; }
+            .wide, .tall, .full { grid-column: span 1; grid-row: span 1; }
+        }
+
+        footer {
+            margin-top: 80px;
+            text-align: center;
+            font-family: 'Space Mono', monospace;
+            font-size: 0.7rem;
+            opacity: 0.5;
+        }
+    </style>
+</head>
+<body>
+
+    <button class="toggle" onclick="toggleTheme()"><i class="fa-solid fa-leaf"></i></button>
+
+    <div class="aura-container">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+    </div>
+
+    <div class="wrapper">
+        <header>
+            <div class="profile-wrapper">
+                <img src="1747980527921.jpg" alt="JAY-C" class="profile-img">
+            </div>
+            <div class="header-text">
+                <p style="font-family: 'Space Mono'; font-size: 0.9rem; color: var(--accent);">// STATUS: ACTIVE</p>
+                <h1 class="shimmer">JAY-C MANALOTO</h1>
+                <p style="color: var(--text-dim); max-width: 500px;">IT Student & Future Web Architect at PSAU.</p>
+            </div>
+        </header>
+
+        <main class="bento">
+            <div class="tile wide tall">
+                <h2>01. Identity</h2>
+                <p style="font-size: 1.2rem; margin-bottom: 20px;">Transforming complex requirements into elegant, high-performance web solutions.</p>
+                <div style="opacity: 0.6; font-size: 0.9rem;">
+                    <p>• Specialized in Web Systems</p>
+                    <p>• ICT Honors Graduate</p>
+                    <p>• UI/UX Enthusiast</p>
+                </div>
+            </div>
+
+            <div class="tile wide">
+                <h2>02. Academic Base</h2>
+                <div style="display: flex; justify-content: space-between;">
+                   <div style="margin-bottom: 10px;">
+                    <strong>PSAU (Pampanga State Argricultural University)</strong><br>
+                    <small style="color: var(--text-dim);">BS in Information Technology</small>
+                </div>
+                <div>
+                    <strong>AGYHS (Anastacio G. Yumul High School)</strong><br>
+                    <small style="color: var(--text-dim);">STEM Strand Graduate</small>
+                </div>
+                    <i class="fa-solid fa-code-branch" style="font-size: 2rem; opacity: 0.1;"></i>
+                </div>
+            </div>
+
+            <div class="tile full">
+                <h2>03. Midterm Lab Vault</h2>
+                <div class="lab-grid">
+                    <a href="Resume.html" class="lab-tile">Resume <i class="fa-solid fa-arrow-right-long"></i></a>
+                    <a href="List.html" class="lab-tile">Advanced Lists <i class="fa-solid fa-arrow-right-long"></i></a>
+                    <a href="Image map.html" class="lab-tile">Interactive Map <i class="fa-solid fa-arrow-right-long"></i></a>
+                    <a href="Request.html" class="lab-tile">HTTP Requests <i class="fa-solid fa-arrow-right-long"></i></a>
+                    <a href="Resume CSS.html" class="lab-tile">Resume Styling <i class="fa-solid fa-arrow-right-long"></i></a>
+                    <a href="Display Property.html" class="lab-tile">Property Display <i class="fa-solid fa-arrow-right-long"></i></a>
+                    <a href="Semantic.html" class="lab-tile" style="border-left: 3px solid var(--accent);">HTML Forms <i class="fa-solid fa-arrow-right-long"></i></a>
+                </div>
+            </div>
+
+            <div class="tile wide">
+                <h2>04. Reach Out</h2>
+                <div style="display: grid; grid-template-columns: 1fr 1fr;">
+                    <a href="mailto:jay-cmanaloto30@gmail.com" class="contact-pill"><i class="fa-solid fa-envelope"></i> Gmail</a>
+                    <a href="https://www.instagram.com/bja.yc?igsh=MTUwemE3ZWhla3Uyaw==" class="contact-pill"><i class="fa-brands fa-instagram"></i> IG</a>
+                    <a href="https://www.facebook.com/share/1ayBVqLRsJ/" class="contact-pill"><i class="fa-brands fa-facebook"></i> FB</a>
+                    <a href="tel:09483191935" class="contact-pill"><i class="fa-solid fa-mobile-screen"></i> Call</a>
+                </div>
+            </div>
+
+            <div class="tile wide" style="background: var(--accent); color: white;">
+                <h2 style="color: white;">05. Upcoming</h2>
+                <p style="font-weight: 800;">FINALS </p>
+                <p style="font-size: 0.8rem; opacity: 0.8;">Pending..</p>
+            </div>
+        </main>
+
+        <footer>
+            DESIGNED_BY_Jay-C // VERSION_4.2.0 // EST_2026
+        </footer>
+    </div>
+
+    <script>
+        function toggleTheme() {
+            const body = document.body;
+            if (body.getAttribute('data-theme') === 'light') {
+                body.removeAttribute('data-theme');
+            } else {
+                body.setAttribute('data-theme', 'light');
+            }
+        }
+    </script>
+</body>
+</html>

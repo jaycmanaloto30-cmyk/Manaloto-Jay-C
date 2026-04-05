@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lab Task 6</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        /* Container */
+        .container {
+            width: 600px;
+            margin: 30px auto;
+        }
+
+        /* 1. Textboxes on separate lines (display: block) */
+        .block-input {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        /* 2. Paragraph + buttons on same line */
+        .inline-box {
+            width: 100%;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-top: 20px;
+        }
+
+        .inline-box p {
+            display: inline-block;
+            width: 65%;
+            vertical-align: middle;
+        }
+
+        .inline-box button {
+            display: inline-block;
+            vertical-align: middle;
+            padding: 8px 15px;
+            margin-left: 5px;
+        }
+
+        /* 3. Google Search Form */
+        .google {
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .google img {
+            width: 200px;
+            margin-bottom: 20px;
+        }
+
+        .google input {
+            width: 80%;
+            padding: 10px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Challenge 8d Sign up */
+        .signup {
+            width: 300px;
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        .signup input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .signup button {
+            width: 100%;
+            padding: 10px;
+            background-color: #1877f2;
+            color: white;
+            border: none;
+        }
+
+        /* Challenge 8e Uber form */
+        .uber {
+            width: 350px;
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        .uber h2 {
+            margin-bottom: 15px;
+        }
+
+        .uber input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .uber .btn {
+            display: inline-block;
+            width: 48%;
+            padding: 10px;
+            text-align: center;
+            border: none;
+        }
+
+        .request {
+            background-color: black;
+            color: white;
+        }
+
+        .schedule {
+            background-color: #eee;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    
+    <h3>Textboxes (Display Block)</h3>
+    <input type="text" placeholder="Name" class="block-input">
+    <input type="email" placeholder="Email" class="block-input">
+
+    
+    <div class="inline-box">
+        <p>Thanks for chatting with our customer support. Would you like to take our quick survey?</p>
+        <button>Yes</button>
+        <button>No</button>
+    </div>
+
+    
+    <div class="google">
+        <img src="logo.png" alt="Google Logo">
+        <input type="text" placeholder="Search Google or type a URL">
+    </div>
+
+    
+    <div class="signup">
+        <h3>Sign Up</h3>
+        <input type="text" placeholder="First name">
+        <input type="text" placeholder="Last name">
+        <input type="email" placeholder="Email">
+        <button>Sign Up</button>
+    </div>
+
+    
+    <div class="uber">
+        <h2>Request a ride now</h2>
+        <input type="text" placeholder="Enter pickup location">
+        <input type="text" placeholder="Enter destination">
+        <button class="btn request">Request now</button>
+        <button class="btn schedule">Schedule for later</button>
+    </div>
+
+</div>
+
+</body>
+</html>

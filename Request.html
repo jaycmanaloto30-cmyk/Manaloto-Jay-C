@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML FORM</title>
+</head>
+<body>
+    
+    <form action="#" method="post" style="width:700px; margin:30px;">
+
+    
+    <h1 style="color:orange; font-family:Georgia;">How can we help?</h1>
+
+
+<form action="#" method="post">
+    <fieldset>
+        <legend><h1 style="color:blue">Request for Proposal</h1></legend>
+
+        <table cellpadding="5">
+            <tr>
+                <td>Your Name:</td>
+                <td><input type="text" name="name"></td>
+            </tr>
+
+            <tr>
+                <td>Email:</td>
+                <td><input type="email" name="email"></td>
+            </tr>
+
+            <tr>
+                <td>Username:</td>
+                <td><input type="text" name="username"></td>
+            </tr>
+
+            <tr>
+                <td>Password:</td>
+                <td><input type="password" name="password"></td>
+            </tr>
+
+            <tr>
+                <td valign="top">Your Business:</td>
+                <td>
+                    <textarea name="business_desc" rows="5" cols="40">
+Briefly describe your business in this space:
+                    </textarea>
+                </td>
+            </tr>
+
+            <tr>
+                <td valign="top">Company size:</td>
+                <td>
+                    <input type="radio" name="size" value="less10"> Less than 10<br>
+                    <input type="radio" name="size" value="11-50"> 11 to 50<br>
+                    <input type="radio" name="size" value="50-200"> 50 to 200<br>
+                    <input type="radio" name="size" value="over200"> Over 200
+                </td>
+            </tr>
+
+            <tr>
+                <td>Services:</td>
+                <td>
+                    <input type="checkbox" name="service[]" value="brand"> Brand Identity
+                    <input type="checkbox" name="service[]" value="website"> New Website
+                    <input type="checkbox" name="service[]" value="redesigner"> Web Redesigner
+                </td>
+            </tr>
+
+            <tr>
+                <td>Timeline:</td>
+                <td>
+                    <select name="timeline">
+                        <option>Immediately</option>
+                        <option>1–2 weeks</option>
+                        <option>3–6 weeks</option>
+                        <option>1–2 months</option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td>
+                    <input type="submit" value="Send to Dev/Design">
+                </td>
+            </tr>
+        </table>
+    </fieldset>
+</form>
+
+</body>
+</html>‎

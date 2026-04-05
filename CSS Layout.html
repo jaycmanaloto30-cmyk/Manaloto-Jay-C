@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Styled Homepage</title>
+  <style>
+    :root {
+      --primary-bg: #8B0000;
+      --header-text: #FFFFFF;
+      --sidebar-bg: #FFC0CB;
+      --active-btn: #DC143C;
+      --accent-box: #660000;
+      --accent-text: #FFD700;
+      --border-color: #FFC0CB;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f0f0f0;
+      display: flex;
+      justify-content: center;
+    }
+
+    .main-wrapper {
+      background-color: white;
+      max-width: 900px;
+      width: 100%;
+      border: 1px solid #ccc;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    header {
+      background-color: var(--primary-bg);
+      color: var(--header-text);
+      padding: 30px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+
+    header p {
+      margin: 10px 0 0;
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+
+    .content-area {
+      display: grid;
+      grid-template-columns: 180px 1fr 200px;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .menu-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .menu-btn {
+      background-color: #f0f0f0;
+      border: 1px solid #aaa;
+      padding: 8px;
+      text-align: left;
+      text-decoration: none;
+      color: #000;
+      font-size: 0.85rem;
+      border-radius: 4px;
+    }
+
+    .menu-btn.active {
+      background-color: var(--active-btn);
+      color: white;
+      border-color: var(--active-btn);
+    }
+
+    main h2 {
+      margin-top: 0;
+      color: #222;
+    }
+
+    main p {
+      font-size: 0.95rem;
+      line-height: 1.5;
+      color: #444;
+    }
+
+    .info-card {
+      background-color: var(--accent-box);
+      color: white;
+      padding: 15px;
+      border-radius: 10px;
+      font-size: 0.85rem;
+    }
+
+    .info-card h3 {
+      margin-top: 0;
+      color: var(--accent-text);
+      border-bottom: 1px solid #444;
+      padding-bottom: 5px;
+    }
+
+    footer {
+      margin: 20px;
+      padding: 20px;
+      background-color: #f0f0f0;
+      border: 1px solid var(--border-color);
+      font-size: 0.85rem;
+      text-align: center;
+      color: #666;
+    }
+
+    @media (max-width: 768px) {
+      .content-area {
+        grid-template-columns: 1fr;
+      }
+      .menu-sidebar {
+        order: 2;
+      }
+      main {
+        order: 1;
+      }
+      .info-card {
+        order: 3;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="main-wrapper">
+    <header>
+      <h1>Welcome to My Homepage</h1>
+      <p>Use the menu to select different Stylesheets</p>
+    </header>
+    <div class="content-area">
+      <nav class="menu-sidebar">
+        <a href="                                           
+        <a href="#" class="menu-btn">Stylesheet 2</a>
+        <a href="                                    
+        <a href="#" class="menu-btn">Stylesheet 4</a>
+        <a href="                                     
+      </nav>
+      <main>
+        <h2>Same Page Different Stylesheets</h2>
+        <p>This is a demonstration of how different stylesheets can change the layout of your HTML page.</p>
+        <p>By clicking the links in the sidebar, you can swap the design entirely while keeping the same content.</p>
+        <h3>No Styles</h3>
+        <p>This page uses DIV elements to group different sections. Click below to see the raw view:</p>
+        <a href="#" style="color: var(--active-btn);">No Stylesheet.</a>
+      </main>
+      <aside class="info-card">
+        <h3>Side-Bar</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </aside>
+    </div>
+    <footer>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+    </footer>
+  </div>
+</body>
+</html>
