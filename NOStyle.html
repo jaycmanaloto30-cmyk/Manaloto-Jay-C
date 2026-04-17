@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinalTask1</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+   
+    <header class="header">
+        <h1>Welcome to My Homepage</h1>
+        <p>Use the menu to select different Stylesheets</p>
+    </header>
+
+   
+    <div class="main">
+
+        <aside class="menu">
+            <div id="style1" class="style-option" onclick="changeStyle('style1')">Stylesheet 1</div>
+            <div id="style2" class="style-option" onclick="changeStyle('style1')">Stylesheet 2</div>
+            <div id="style3" class="style-option" onclick="changeStyle('style1')">Stylesheet 3</div>
+            <div id="style4" class="style-option" onclick="changeStyle('style1')">Stylesheet 4</div>
+            <div id="noStyle" class="style-option" onclick="changeStyle('noStyle')">No Stylesheet</div>
+        </aside>
+
+        <section class="content">
+            <h2>Same Page Different Stylesheets</h2><br>
+            <p>
+                This is a demonstration of how different stylesheets can change the layout of your HTML page.
+                You can change the layout of this page by selecting different stylesheets in the menu,
+                or by selecting one of the following links:
+            </p>
+
+            <p>
+                <a href="#style1" onclick="changeStyle('style1')">Stylesheet1</a>,
+                <a href="#">Stylesheet2</a>,
+                <a href="#">Stylesheet3</a>,
+                <a href="#">Stylesheet4</a>.
+            </p><br>
+
+            <h3>No Styles</h3><br>
+            <p>
+                This page uses DIV elements to group different sections of the HTML page.
+                Click here to see how the page looks like with no stylesheet:
+                <a href="#noStyle" onclick="changeStyle('noStyle')">No Stylesheet</a>.
+            </p>
+        </section>
+
+        <aside class="sidebar">
+            <h3>Side-Bar</h3><br>
+            <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus illo magnam debitis quisquam placeat error, est pariatur ipsam eaque nobis inventore ipsum! Neque sequi veritatis magnam voluptate iure distinctio cum.
+            </p>
+        </aside>
+
+    </div>
+
+    <footer class="footer">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, quos. Perspiciatis, repellat? Unde, assumenda ab totam deleniti tempora possimus voluptas, perferendis quisquam odio suscipit mollitia accusantium, aliquid quaerat est! Obcaecati.
+    </footer>
+
+</div>
+
+<script>
+
+function changeStyle(style) {
+   
+    document.body.className = style;
+}
+</script>
+
+
+</body>
+</html>
